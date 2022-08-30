@@ -1,5 +1,3 @@
-Cypress.Cookies.debug(true);
-
 describe("Login", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000/tentang-kami");
@@ -11,7 +9,7 @@ describe("Login", () => {
     cy.get("h1").contains("Login");
   });
 
-  it("should navigate to the login page", () => {
+  it("should display error when username or password is incorrect", () => {
     cy.get("input[name=username]").type("abcdef");
     cy.get("input[name=password]").type("abcdef{enter}");
 
